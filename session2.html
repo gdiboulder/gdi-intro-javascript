@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Class 2 ~ Javascript ~ Girl Develop IT</title>
+
+    <meta name="description" content="This is the official Girl Develop It Core Intro Javascript course. Material based on original material by Sara Chipps, Pamela Fox, Alexis Goldstein, Izzy Johnston and Leo Newball.
+
+    The course is meant to be taught in 4 two-hour sections. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
+    <meta name="author" content="Girl Develop It">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="reveal/css/reveal.css">
+    <link rel="stylesheet" href="reveal/css/theme/gdilight.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <!-- light editor--><link rel="stylesheet" href="reveal/lib/css/light.css">
+    <!-- dark editor<link rel="stylesheet" href="reveal/lib/css/dark.css">-->
+
+    <!-- If use the PDF print sheet so students can print slides-->
+    
+    <link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- Opening slide -->
+        <section>
+          <img src = "images/gdi_logo_badge.png">
+          <h3>Beginning Javascript</h3>
+          <h4>Class 2</h4>
+        </section>
+        
+        <!-- Welcome-->
+        <section>
+          <h3>Welcome!</h3>
+          <div class = "left-align">
+          <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+          <p class ="green">Some "rules"</p>
+          <ul>
+            <li>We are here for you!</li>
+            <li>Every question is important</li>
+            <li>Help each other</li>
+            <li>Have fun</li>
+          </ul>
+          </div>
+        </section>
+        
+        <!-- What is a library-->
+        <section>
+          <h3>What is a library?</h3>
+          <ul>
+            <li>Software libraries hold functions (not books!)</li>
+            <li>When you include a library, you can use all the functions in that library</li>
+            <li>That means: <span class = "pink">you get to take advantage of other people's experience!</li>
+            <li>And... <span class ="blue">Save time!</span></li>
+          </ul>
+        </section>
+        
+        <!-- What is jQuery-->
+        <section>
+          <h3>What is jQuery?</h3>
+          <p>jQuery is a <span class = "green">library</span> of JavaScript functions.</p>
+          <p>It contains many functions to help simplify your programming, including:</p>
+          <ul>
+            <li>HTML element selection &amp; manipulation</li>
+            <li>CSS manipulation</li>
+            <li>HTML events</li>
+            <li>JavaScript effects and animations</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h3>Why use jQuery?</h3>
+          <ul>
+            <li>The most popular JavaScript library</li>
+            <li>jQuery empowers you to "write less, do more."</li>
+            <li>Great <a href = "http://docs.jquery.com/" target = "_blank">documentation and tutorials</a></li>
+            <li>Used by nearly 20 million(!) websites</li>
+            <li>Actively developed since 2006</li>
+            <li>Eliminates a lot of cross browser compatibility issues</li>
+          </ul>
+        </section>
+        
+        <!-- Including jquery-->
+        <section>
+          <h3>Including jQuery</h3>
+          Two ways to include jQuery on your page:
+          <div>
+            Download the library, store it locally:
+          <pre><code contenteditable class = "html">
+  &lt;head>
+    &lt;script type="text/javascript" src="jquery.js">&lt;/script>
+  &lt;/head>
+          </code></pre>
+          </div>
+          <div>
+          Include the the live library:
+          <pre><code contenteditable class = "html">
+  &lt;head>
+    &lt;script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js">
+    &lt;/script>
+  &lt;/head>
+          </code></pre>
+          </div>
+          <div>
+            Note: live code can change! It's always best to download
+          </div>
+        </section>
+        
+        <!-- Selectors-->
+        <section>
+          <h3>jQuery Selectors</h3>
+          <p>Remember <span class = "green">document.getElementById()</span> and <span class = "green">documet.getElementsByTagName()</span>? </p>
+          <p> jQuery selectors let you get elements by: </p>
+          <ul>
+            <li>Element name (div, p)
+            <pre><code contenteditable class = "javascript">
+  var divs = $("div"); // All divs on page
+            </code></pre>
+            </li>
+            <li>ID name (#picture, #results)
+            <pre><code contenteditable class = "javascript">
+  var img = $("#picture"); //img with id picture
+            </code></pre>
+            </li>
+            <li>Class name (.result, .picture)
+            <pre><code contenteditable class = "javascript">
+  var images = $(".picture"); //All images with class picture 
+            </code></pre> 
+            </li>
+          </ul>
+        </section>
+      
+        
+        <!-- Actions-->
+        <section>
+          <h3>jQuery Actions</h3>
+          <div class = "left-align">
+            <p>jQuery has hundreds of actions that can be performed on any element</p>
+            <p>All the actions are methods</p>
+            <p>As methods they are called with dot notation</p>
+          </div>
+          <div>
+            Action format
+            <pre><code contenteditable class = "javascript">
+  $(selector).action();     
+            </code></pre>
+          </div>
+        </section>
+        
+        <!-- Attributes and css-->
+        <section>
+          <h3>Updating attributes and css</h3>
+          <div>
+            <pre><code contenteditable class = "html">
+  &lt;img id="mainpicture" src="http://girldevelopit.com/assets/pink-logo.png">         
+            </code></pre>
+          </div>
+          <div>
+            Attribute get and set
+            <pre><code contenteditable class = "javascript">
+  var img = $('#mainpicture');
+  img.attr('src');
+  img.attr('src', 'http://girldevelopit.com/assets/pink-logo.png');
+            </code></pre>
+          </div>
+          <div>
+            CSS property get and set
+            <pre><code contenteditable class = "javascript">
+  var img = $('#mainpicture');
+  img.css('width');
+  img.css('width', '200px');
+            </code></pre>
+          </div>
+        </section>
+        
+        <!-- html values-->
+        <section>
+          <h3>Updating values and html</h3>
+          <div>
+            <pre><code contenteditable class = "html">
+  &lt;div id = "results">Boo!&lt;/div>         
+            </code></pre>
+          </div>
+          <div>
+            Get and set html value
+            <pre><code contenteditable class = "javascript">
+  var div = $('#results');
+  div.html();
+  div.html('New html!');
+            </code></pre>
+          </div>
+        </section>
+        
+        <!-- Append and prepend-->
+        <section>
+          <h3>Append and Prepend</h3>
+          <div>
+            <pre><code contenteditable class = "html">
+  &lt;div id = "results">Boo!&lt;/div>         
+            </code></pre>
+          </div>
+          <div>
+            Append html
+            <pre><code contenteditable class = "javascript">
+  var div = $('#results');
+  div.append('Additional html');
+            </code></pre>
+          </div>
+          <div>
+            Prepend html
+            <pre><code contenteditable class = "javascript">
+  var div = $('#results');
+  div.prepend('Additional html (on top)');
+            </code></pre>
+          </div>
+        </section>
+        
+        <section>
+          <h3>Creating new element</h3>
+          <div>
+            <pre><code contenteditable class = "javascript">
+  var newDiv = $('&lt;div>&lt;/div>');
+            </code></pre>
+          </div>
+          <div>
+            Seriously. That's it!
+          </div>
+        </section>
+        
+        <!-- Exercise-->
+        <section>
+          <h3>Let's Develop It!</h3>
+          <p>Try to convert last week's DOM interaction into jQuery.</p>
+          <p>Don't forget to include jQuery in your html head!</p>
+        </section>
+        
+        <!-- Document Ready-->
+        <section>
+          <h3>Document Ready</h3>
+          <div class = "left-align">
+          <p>Webpages take time to load</p>
+          <p>Almost always, you don't want the JavaScript to be called until the page is loaded</p>
+          </div>
+          <div>
+            Document ready is a method called when the page is loaded
+            <pre><code contenteditable class = "javascript">
+  $(document).ready(function(){
+    
+  });
+            </code></pre>
+          </div>
+          <div class = "left-align">
+            <span class = "yellow">Note:</span> The function() inside is an "anonymous function". It has no name, but still performs like a function.
+          </div>
+        </section>
+        
+        <!-- HTML Events-->
+        <section>
+          <h3>HTML events</h3>
+          <p>Events occur on a webpage via user interaction</p>
+          <p>Common Events:</p>
+          <ul>
+            <li>mouseenter &mdash; mouse goes inside an element</li>
+            <li>mouseleave &mdash; mouse leaves an element</li>
+            <li>click &mdash; mouse clicks an element</li>
+            <li><a href = "http://api.jquery.com/category/events/" target = "_blank">Other events</a></li>
+          </ul>
+        </section>
+        
+        <section>
+          <h3>Handling events</h3>
+      <pre><code contenteditable class = "javascript">
+  $(selector).mouseenter(function(){
+    //code when the mouse enters
+  })
+      </code></pre>
+          <div>
+      <pre><code contenteditable class = "javascript">
+  $('.box').mouseenter(function(){
+    $(this).css('background-color', 'purple')
+  })
+      </code></pre>
+          </div>
+          <div class = "left-align">
+            <div>The <span class = "green">$(this)</span> selector in jQuery refers to the element on whom the action was called.</div>
+            <div>Here <span class = "green">$(this)</span> is the <span class = "blue">$('.box')</span> that the mouse entered.
+          </div>
+        </section>
+        
+        <section>
+          <h3>Handling event examples</h3>
+          <div>
+            <pre><code contenteditable class = "javascript">
+  $('.box').mouseenter(function(){
+    $(this).css('background-color', 'purple')
+  })
+            </code></pre>
+          </div>
+          <div>
+          <pre><code contenteditable class = "javascript">
+  $('.box').mouseleave(function(){
+    $(this).css('background-color', 'orange')
+  })
+          </code></pre>
+          </div>
+          <div>
+          <pre><code contenteditable class = "javascript">
+  $('.box').click(function(){
+    $(this).css('background-color', 'green')
+  })
+          </code></pre>
+          </div>
+        </section>
+        
+        <section>
+          <h3>Multiple events</h3>
+          <p>If you want multiple events to happen on the same element, you can use the bind method</p>
+          <div>
+          <pre><code contenteditable class = "javascript">
+  $('.box').bind({
+    click: function() {
+      $(this).css('background-color', 'green')
+    },
+    mouseenter: function() {
+      $(this).css('background-color', 'purple')
+    },
+    mouseleave: function(){
+      $(this).css('background-color', 'orange')
+    }
+  });
+          </code></pre>
+          </div>
+        </section>
+        
+        <!-- Exercise-->
+        <section>
+          <h3>Let's Develop It</h3>
+          <ul>
+            <li>Add a div to your html that is 100px by 200px</li>
+            <li>Bind events to the div in your javascript file</li>
+            <li>Don't forget to surround your events with document ready</li>
+            <li>Try to change size, color, or even the html inside the div</li>
+            <li>Bonus: change all the onclick events to jQuery click events</li>
+          </ul>
+        </section>
+        
+        <!-- HTML forms-->
+        <section>
+          <h3>HTML forms</h3>
+          <p>HTML Forms allow users to enter information</p>
+          <div>
+            <pre><code contenteditable class = "html">
+  &lt;form id ="about-me">
+    &lt;input type = "text" id = "name" placeholder = "Enter a name"/>
+    &lt;label>Do you like popcorn&lt;/label>
+    Yes &lt;input type = "radio" name = "popcorn" val = "yes"/>
+    No &lt;input type = "radio" name = "popcorn" val = "no"/>
+    &lt;label>Favorite Dinosaur&lt;/label>
+    &lt;select id = "dinosaur">
+      &lt;option value = "t-rex">Tyrannosaurus Rex&lt;/option>
+      &lt;option value = "tri">Triceratops&lt;/option>
+      &lt;option value = "stego">Stegosaurus&lt;/option>
+      &lt;option value = "other">Other&lt;/option>
+    &lt;/select>
+    &lt;input type = "submit" value = "Go!" style = "padding: 7px; font-size:1em"/>
+  &lt;/form>
+            </code></pre>
+          </div>
+        </section>
+        
+        <section>
+          <h3>HTML forms</h3>
+          <p>HTML Forms allow users to enter information</p>
+          <div class = "left-align">
+<form>
+  <input type = "text" id = "name" placeholder = "Enter a name" style = "width:300px; padding: 7px; font-size:1em"/><br/>
+  <label>Do you like popcorn</label><br/>
+  Yes <input type = "radio" name = "popcorn" val = "yes" style ="font-size:1em"/>
+  No <input type = "radio" name = "popcorn" val = "no" style ="font-size:1em"/><br/>
+  <label>Favorite Dinosaur</label><br/>
+  <select id = "dinosaur" style = "padding: 7px; font-size:1em">
+    <option>Tyrannosaurus Rex</option>
+    <option>Triceratops</option>
+    <option>Stegosaurus</option>
+    <option>Other</option>
+  </select><br/>
+  <input type = "submit" value = "Go!" style = "padding: 7px; font-size:1em"/>
+</form>
+          </div>
+        </section>
+        
+        <!-- JavaScript and HTML Forms-->
+        <section>
+          <h3>Values from Forms</h3>
+          <p>You can use JavaScript to get values from a form</p>
+          <div>
+            <pre><code contenteditable class = "javascript">
+  $('#name').val();
+  $('select#dinosaur').val();
+  $('input:radio[name=popcorn]:checked').val();
+            </code></pre>
+          </div>
+          <div>
+            Or set values of a form
+            <pre><code contenteditable class = "javascript">
+  $('#name').val('Mitch');
+  $('select#dinosaur').val('stego');
+  $('input:radio[name=popcorn]:checked').val('no');
+            </code></pre>
+          </div>
+        </section>
+        
+        <section>
+          <h3>Values from Forms</h3>
+          <p>jQuery has an event for form submission</p>
+          <div>
+            <pre><code contenteditable class = "javascript">
+  $('#about-me').submit(function(event){
+    //code to execute after submission
+    return false;
+  });
+            </code></pre>
+            <span class = "yellow">"return false"</span> to prevent the form trying to submit to a server.
+          </div>
+        </section>
+        
+        <!-- Exercise-->
+        <section>
+          <h3>Let's Develop It</h3>
+          <ul>
+            <li>Choose one (or all!) of your functions made so far</li>
+            <li>i.e. lifetime supply, favorite things, or my friends</li>
+            <li>Create a form to send dynamic data to the function when you click the button</li>
+            <li>Don't forget to add parameters to your existing functions!</p>
+            <li>This is a little harder than all the other exercises.</li>
+            <li>Be creative!</li>
+          </ul>
+        </section>
+        <!-- -->
+        <section>
+          <h3>Warning</h3>
+          <div style ="font-size=1.2em" class = "yellow">
+            The following few slides have lots of acronyms and jargon.
+          </div>
+          <div>On behalf of developers everywhere, we apologize</div>
+        </section>
+        <!-- What is an API-->
+        <section>
+          <h3>What is an API?</h3>
+          <ul>
+            <li><span class = "yellow">A</span>pplication <span class = "yellow">P</span>rogramming <span class = "yellow">I</span>nterface</li>
+            <li>A structured way that a site provides to access its data.</li>
+            <li>How we can access information from sites that are not our own (Twitter, Meetup, Facebook, Foursquare)</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h3>What is an API?</h3>
+          <ul>
+            <li>Primary role: a channel for applications to work together
+              <ul>
+                <li>Your website and the Twitter API</li>
+                <li>Twitter's mobile app and the Twitter API</li>
+                <li>Hootsuite's mobile app and the Twitter API</li>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- What is AJAX-->
+        <section>
+          <h3>What is AJAX?</h3>
+          <ul>
+            <li><span class = "yellow">A</span>synchronous <span class = "yellow">J</span>avaScript <span class = "yellow">a</span>nd <span class = "yellow">X</span>ML</li>
+            <li>Method to communicate to a server or API</li>
+            <li>Asynchronous means:
+              <ul>
+                <li>I ask Twitter for all the tweets ever!</li>
+                <li>That will take a while</li>
+                <li>My <span class = "green">whole website</span> could be <span class = "green">locked up</span> while I wait!</li>
+                <li>Or, my call can be <span class = "blue">'asynchronous'</span> and my website will just <span class = "blue">listen for Twitter's response</span> with one ear, but go about <span class = "blue">normal business until the response arrives</span>.
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- What is REST-->
+        <section>
+          <h3>What is REST?</h3>
+          <ul>
+            <li><span class = "yellow">Re</span>presentational <span class = "yellow">S</span>tate <span class = "yellow">T</span>ransfer</li>
+            <li>REST is a way to ask an API for information by using a URL.</li>
+            <li>REST Urls are created with the following syntax:
+              <ul>
+                <li>http://ApiSite.com/method?parameter=value&amp;parameter=value</li>
+                <li><span class = "blue">Method</span> &mdash; what you want from the API. Defined by API documentations</li>
+                <li><span class = "blue">Parameter</span> &mdash; a type of filter or restraint. Defined by API documentations</li>
+                <li><span class = "blue">Value</span> &mdash; value for parameter. Defined by you!</li>
+              </ul>
+            </li>
+            
+          </ul>
+        </section>
+        
+        <section>
+          <h3>Where do I learn about an API?</h3>
+          <p>All (good) APIs have documentation</p>
+          <ul>
+            <li>Facebook (<a href = "https://developers.facebook.com/" target = "_blank">https://developers.facebook.com/</a>)</li>
+            <li>Twitter (<a href = "https://dev.twitter.com/" target = "_blank">https://dev.twitter.com/</a>)</li>
+            <li>Meetup (<a href = "http://www.meetup.com/meetup_api/" target = "_blank">http://www.meetup.com/meetup_api/</a>)</li>
+            <li>FourSquare (<a href = "https://developer.foursquare.com/">https://developer.foursquare.com/</a>)</li>
+        </section>
+        
+        <!-- What is JSON-->
+        <section>
+          <h3>What is JSON?</h3>
+          <ul>
+            <li><span class = "yellow">J</span>ava<span class = "yellow">S</span>cript <span class = "yellow">O</span>bject <span class = "yellow">N</span>otation</li>
+            <li>Format for data returned from APIs</li>
+            <li>You've seen it before!</li>
+            <li>JavaScript objects</li>
+          </ul>
+        </section>
+        
+        <!-- Getting started!-->
+        <section>
+         <h3>Getting started!</h3>
+         <p>Get an API Key</p>
+         <p class = "green">A what?</p>
+         <ul>
+           <li>Api Key or Developer Key is a way for an API to identify you</li>
+           <li>More secure for an API (Know who is using their API)</li>
+           <li>More secure for you -- people can't pretend to be your website</li>
+          </ul>
+        </section>
+        
+        <!-- Meetup-->
+        <section>
+          <h3>Meetup API</h3>
+          <p>We will be using the Meetup API</p>
+          <p><a href = "http://www.meetup.com/meetup_api/" target = "_blank">Documentation</a></p>
+          <img src = "images/meetup.png" />
+          <p>7512291c2b773a5a39416b06c28</p>
+        </section>
+        
+        <section>
+          <h3>Meetup API</h3>
+          <p>We will be finding interesting Meetups near us</p>
+          <p><a href = "http://www.meetup.com/meetup_api/docs/2/open_events/" target = "_blank">Open Events</a></p>
+          <img src = "images/meetup_open.png"/>
+        </section>
+        
+        <section>
+          <h3>Meetup API</h3>
+          <p>Try it in the meetup console</p>
+          <p><a href = "http://www.meetup.com/meetup_api/console/?path=/2/open_events" target = "_blank">Open Events Console</a></p>
+          <img src = "images/meetup_console.png"/>
+        </section>
+        
+        <section>
+          <h3>Meetup API</h3>
+          <p>Try it in the meetup console</p>
+          <img src = "images/meetup_results.png"/>
+        </section>
+        
+        <!-- jQuery Ajax-->
+        <section>
+          <h3>jQuery Ajax</h3>
+          <p>jQuery method to perform an AJAX call</p>
+          <div>
+            <pre><code contenteditable class = "javascript">
+  $.ajax({
+    url: 'http://site.com',
+    data: {
+      parameter: 'value',
+      parameter: 'value'
+    },
+    crossDomain: true,
+    dataType: 'jsonp',
+    type: "GET",
+    success: function (data) {
+        // code with data returned
+    },
+    error: function(data) {
+       // code with error returned
+    }       
+  });
+            </code></pre>
+          </div>
+        </section>
+        
+        <section>
+          <h3>jQuery Ajax</h3>
+          <div>
+            <pre><code contenteditable class = "javascript">
+  $.ajax({
+    url: 'http://site.com',
+    ...     
+  });
+            </code></pre>
+          </div>
+          <ul>
+            <li> $.ajax() &mdash; jQuery method for sending AJAX requests</li>
+            <li>Takes one parameter &mdash; a JavaScript object</li>
+            <li>Note the {}</li>
+            <li><span class = "blue">url</span> &mdash; first property, the url where you will send the AJAX request</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h3>jQuery Ajax</h3>
+          <div>
+            <pre><code contenteditable class = "javascript">
+  ...
+  data: {
+    parameter: 'value',
+    parameter: 'value'
+  },
+  ... 
+            </code></pre>
+          </div>
+          <ul>
+            <li><span class = "blue">data</span> &mdash; a JavaScript object with all the parameters for the AJAX request</li>
+            <li>Some parameters in the <a href = "http://www.meetup.com/meetup_api/docs/2/open_events/" target = "_blank">Meetup open events</a>
+              <ul>
+                <li>key (refers to api key)</li>
+                <li>city</li>
+                <li>country</li>
+                <li>topic</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <section>
+          <h3>jQuery Ajax</h3>
+          <div>
+            <pre><code contenteditable class = "javascript">
+  ...
+  crossDomain: true,
+  dataType: 'jsonp',
+  type: "GET",
+  ... 
+            </code></pre>
+          </div>
+          <ul>
+            <li><span class = "blue">crossDomain</span> &mdash; are you sending the request to a domain that is not your own?</li>
+            <li><span class = "blue">dataType</span> &mdash; the format you'll get your data back in</li>
+            <li><span class = "blue">type</span> &mdash; what type of request is it?
+              <ul>
+                <li>GET &mdash; retrieve data</li>
+                <li>POST &mdash; post new data</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        
+        <section>
+          <h3>jQuery Ajax</h3>
+          <div>
+            <pre><code contenteditable class = "javascript">
+  ...
+  success: function (data) {
+      // code with data returned
+  },
+  error: function(data) {
+     // code with error returned
+  }
+  ... 
+            </code></pre>
+          </div>
+          <ul>
+            <li><span class = "blue">success</span> &mdash; code that will execute if results are sent back successfully</li>
+            <li><span class = "blue">error</span> &mdash; code that will execute if results return an error</li>
+          </ul>
+        </section>
+        
+        <!-- Exercise-->
+        <section>
+          <h3>Let's Develop It!</h3>
+          <ul>
+            <li>Create a new div with the id "events"</li>
+            <li>Create a new function in your javascript that calls <a href = "http://www.meetup.com/meetup_api/docs/2/open_events/" target = "_blank">Meetup open events</a> method</li>
+            <li>Add parameters such as city, state or lat, lon to find meetups near you</li>
+            <li>Add a parameter such as category or topic to find meetups that you would be interested in</li>
+            <li>For now, just look at the results in the console.log()</li>
+            <li>Call this new function in document ready</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h3>Let's Develop It!</h3>
+          <img src = "images/console.png"/>
+        </section>
+        
+        <section>
+          <h3>Let's Develop It!</h3>
+          <ul>
+            <li>Create a new function that can parse results.</li>
+            <li>Remember that the results will be an array of objects</li>
+            <li>Loop through your results</li>
+            <li>For each result, create a new div</li>
+            <li>Get the name, description, group name, and url of each event</li>
+            <li>Append them to your new div</li>
+            <li>Append the new div to the div "events"</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h3>Let's Develop It!</h3>
+          <ul>
+            <li>Create a form for users to enter in their location and a topic of their choosing</li>
+            <li>On submit, call the same Meetup open events method, but with the user's values</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h3>Bonus</h3>
+          <p class = "blue">Still have time? Can't stop learning?</p>
+          <div class = "left-align">
+            <p>One of the best things about jQuery is the developer community</p>
+            <p>They love to build!</p>
+            <p>Check out some great plugins:</p>
+            <ul>
+              <li><a href = "http://jqueryui.com/" target = "_blank">jQuery UI</a> &mdash; accordions, drag and drop, resize, sort</li>
+              <li><a href = "http://leandrovieira.com/projects/jquery/lightbox/" target = "_blank">jQuery Lightbox</a> &mdash; Pop up gallery of images!</li>
+              <li><a href = "http://www.jqueryplugins.com/" target = "_blank">And so many more!</a></li>
+            </ul>
+          </div>
+        </section>
+        <!-- -->
+        <section>
+          <h2>Questions?</h2>
+          <div style = "font-size:1200%; height:100%; margin-top:40%" class ="blue">?
+            <div class ="clear"></div></div>
+        </section>
+
+        <section>
+            <h2>Join us for our next events!</h2>
+            <p>Intro to HTML &amp; CSS</p>
+            <p class="green">January 11th &amp; 12th</p>
+
+            <p>Intro to Python</p>
+            <p class="green">January 25th &amp; 26th</p>
+        </section>
+
+        <section>
+            <h2>Exciting new opportunity!</h2>
+            <p>Shared working space @ SimpleEnergy</p>
+            <p class="green">Details to come soon</p>
+        </section>
+      </div>
+      <footer>
+        <div class="copyright">
+          Javascript ~ Girl Develop It ~
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+        </div>
+      </footer>
+    </div>
+
+
+    <script src="reveal/lib/js/head.min.js"></script>
+    <script src="reveal/js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
