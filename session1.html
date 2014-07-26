@@ -151,7 +151,7 @@
           <h3>Clients and servers</h3>
           <p>What happens when you access a website?</p>
           <img src = "images/client-server.png"/>
-          <p>JavaScript is "client side" &mdash; it runs in your browser.</p>
+          <p>JavaScript we're writing today is "client side" &mdash; it runs in your browser.</p>
           <p>The browser understands it and runs it.</p>
         </section>
         
@@ -427,10 +427,10 @@
   &lt;html>
     &lt;head>
       &lt;title>My Site!&lt;/title>
-      &lt;script src="javascript.js">&lt;/script>
     &lt;/head>
     &lt;body>
       My site!
+      &lt;script src="javascript.js">&lt;/script>
     &lt;/body>
   &lt;/html>
 </code></pre>
@@ -570,12 +570,19 @@ alert(answer); // "alert" will pop up the answer in a dialog box
   function sayHi(){
     console.log('Hi!');
   }
+
+  //function with multiple statements
+  function sayHiToKateAndRachel() {
+    console.log('Hi Kate');
+    console.log('Hi Rachel');
+  }
           </code></pre>
           </div>
           <div>
             Call the function
          <pre><code contenteditable class ="javascript">
   sayHi();
+  sayHiToKateAndRachel();
           </code></pre>
           </div>
         </section>
@@ -626,7 +633,7 @@ alert(answer); // "alert" will pop up the answer in a dialog box
          <pre><code contenteditable class ="javascript">
   function addNumbers(num1, num2){
     var result = num1 + num2;
-    return result; // Anything after this line won't be read
+    return result; // Anything after this line won't be run
   }
   var sum  = addNumbers(5, 6);
           </code></pre>
@@ -642,7 +649,7 @@ alert(answer); // "alert" will pop up the answer in a dialog box
          <pre><code contenteditable class ="javascript">
   function addNumbers(num1, num2){
     var result = num1 + num2;
-    return result; // Anything after this line won't be read
+    return result; // Anything after this line won't be run
   }
   var sum  = addNumbers(5, 6);
   console.log(result); // Will return undefined because result only exists inside the addNumbers function
@@ -815,9 +822,9 @@ alert(answer); // "alert" will pop up the answer in a dialog box
             <pre><code contenteditable class = "javascript">
   var charlie = {
     age: 8,
-    name: "Charlie Brown",
-    likes: ["baseball", "The little red-haired girl"],
-    pet: "Snoopy"
+    name: 'Charlie Brown',
+    likes: ['baseball', 'The little red-haired girl'],
+    pet: 'Snoopy'
   };
           </code></pre>
           </div>
@@ -830,9 +837,9 @@ alert(answer); // "alert" will pop up the answer in a dialog box
             <pre><code contenteditable class = "javascript">
   var charlie = {
     age: 8,
-    name: "Charlie Brown",
-    likes: ["baseball", "The little red-haired girl"],
-    pet: "Snoopy"
+    name: 'Charlie Brown',
+    likes: ['baseball', 'The little red-haired girl'],
+    pet: 'Snoopy'
   };
       </code></pre>
           </div> 
@@ -865,13 +872,13 @@ alert(answer); // "alert" will pop up the answer in a dialog box
           <div>
           Change existing properties:
           <pre><code contenteditable class = "javascript">
-  charlie.name = "Chuck";
+  charlie.name = 'Chuck';
           </code></pre>
           </div>
           <div>
             Or add new properties:
             <pre><code contenteditable class = "javascript">
-  charlie.gender = "male";
+  charlie.gender = 'male';
             </code></pre>
           </div>
           <div>
@@ -888,10 +895,10 @@ alert(answer); // "alert" will pop up the answer in a dialog box
           <div>
             <pre><code contenteditable class = "javascript">
   var peanuts = [
-    {name: "Charlie Brown", 
-     pet: "Snoopy"},
-    {name: "Linus van Pelt",
-     pet: "Blue Blanket"}
+    {name: 'Charlie Brown', 
+     pet: 'Snoopy'},
+    {name: 'Linus van Pelt',
+     pet: 'Blue Blanket'}
   ];
             </code></pre>
           </div>
