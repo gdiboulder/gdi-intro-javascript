@@ -252,7 +252,7 @@
         <!-- Exercise-->
         <section>
           <h3>Let's Develop It!</h3>
-          <p>Try to convert last week's DOM interaction into jQuery.</p>
+          <p>Try to convert yesterday's DOM interaction into jQuery.</p>
           <p>Don't forget to include jQuery in your html head!</p>
         </section>
         
@@ -374,16 +374,7 @@
             <pre><code contenteditable class = "html">
   &lt;form id ="about-me">
     &lt;input type = "text" id = "name" placeholder = "Enter a name"/>
-    &lt;label>Do you like popcorn&lt;/label>
-    Yes &lt;input type = "radio" name = "popcorn" val = "yes"/>
-    No &lt;input type = "radio" name = "popcorn" val = "no"/>
-    &lt;label>Favorite Dinosaur&lt;/label>
-    &lt;select id = "dinosaur">
-      &lt;option value = "t-rex">Tyrannosaurus Rex&lt;/option>
-      &lt;option value = "tri">Triceratops&lt;/option>
-      &lt;option value = "stego">Stegosaurus&lt;/option>
-      &lt;option value = "other">Other&lt;/option>
-    &lt;/select>
+    &lt;input type = "text" id = "address" placeholder = "Address"/>
     &lt;input type = "submit" value = "Go!" style = "padding: 7px; font-size:1em"/>
   &lt;/form>
             </code></pre>
@@ -396,15 +387,7 @@
           <div class = "left-align">
 <form>
   <input type = "text" id = "name" placeholder = "Enter a name" style = "width:300px; padding: 7px; font-size:1em"/><br/>
-  <label>Do you like popcorn</label><br/>
-  Yes <input type = "radio" name = "popcorn" val = "yes" style ="font-size:1em"/>
-  No <input type = "radio" name = "popcorn" val = "no" style ="font-size:1em"/><br/>
-  <label>Favorite Dinosaur</label><br/>
-  <select id = "dinosaur" style = "padding: 7px; font-size:1em">
-    <option>Tyrannosaurus Rex</option>
-    <option>Triceratops</option>
-    <option>Stegosaurus</option>
-    <option>Other</option>
+  <input type = "text" id = "address" placeholder = "Address" style = "width:300px; padding: 7px; font-size:1em"/><br/>
   </select><br/>
   <input type = "submit" value = "Go!" style = "padding: 7px; font-size:1em"/>
 </form>
@@ -418,16 +401,14 @@
           <div>
             <pre><code contenteditable class = "javascript">
   $('#name').val();
-  $('select#dinosaur').val();
-  $('input:radio[name=popcorn]:checked').val();
+  $('#address').val();
             </code></pre>
           </div>
           <div>
             Or set values of a form
             <pre><code contenteditable class = "javascript">
   $('#name').val('Mitch');
-  $('select#dinosaur').val('stego');
-  $('input:radio[name=popcorn]:checked').val('no');
+  $('#address').val('Boulder');
             </code></pre>
           </div>
         </section>
@@ -562,7 +543,6 @@
           <p>We will be using the Meetup API</p>
           <p><a href = "http://www.meetup.com/meetup_api/" target = "_blank">Documentation</a></p>
           <img src = "images/meetup.png" />
-          <p>7512291c2b773a5a39416b06c28</p>
         </section>
         
         <section>
@@ -751,6 +731,12 @@
             </ul>
           </div>
         </section>
+        <section>
+          <h2>Learn More</h2>
+          <p><a href="http://www.codecademy.com">www.codecademy.com</a></p>
+          <p>JavaScript & jQuery interactive front-end web development</p>
+          <p class="green">Jon Duckett</p>
+        </section>
         <!-- -->
         <section>
           <h2>Questions?</h2>
@@ -760,17 +746,13 @@
 
         <section>
             <h2>Join us for our next events!</h2>
-            <p>Intro to HTML &amp; CSS</p>
-            <p class="green">January 11th &amp; 12th</p>
+            <p>Intro to HTML &amp; CSS (Fort Collins!)</p>
+            <p class="green">August 2-3</p>
 
-            <p>Intro to Python</p>
-            <p class="green">January 25th &amp; 26th</p>
-        </section>
+            <p>Study session for JavaScript</p>
+            <p class="green">August 4th</p>
 
-        <section>
-            <h2>Exciting new opportunity!</h2>
-            <p>Shared working space @ SimpleEnergy</p>
-            <p class="green">Details to come soon</p>
+            <p>More classes coming soon!</p>
         </section>
       </div>
       <footer>
