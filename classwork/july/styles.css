@@ -1,0 +1,11 @@
+.box {
+	width: 200px;
+	height: 200px;
+	border: 2px solid #000;
+}
+.meetup-title {
+	color: red;
+}
+#calculate-form {
+	margin: 20px 0;
+}
